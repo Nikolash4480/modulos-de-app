@@ -1,0 +1,11 @@
+<!-- @dsCard group="Flujo de nodos" height=194 subtitle="Tarjeta de nodo con tile, título, subtítulo, texto e insignia; seleccionado en verde" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>html,body{margin:0}body{background:var(--surface-2);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}</style>
+</head><body><div id="r"></div>
+<script>
+var h=React.createElement,K=window.AppKit;
+function Demo(){return h('div',{style:{display:'grid',gap:16,gridTemplateColumns:'repeat(3,max-content)',alignItems:'start'}},h(K.FlowNode,{icon:'chat',title:'Mensaje del cliente',subtitle:'Disparador de mensaje'}),h(K.FlowNode,{icon:'sort',iconTone:'green',title:'Clasificar intención',subtitle:'Nodo de IA',badge:'96%',selected:true,body:'Ordena el pedido en reembolso, estado, envío u otro.'}),h(K.FlowNode,{icon:'order',iconTone:'dark',title:'Revisar pedido',subtitle:'Tienda',body:'Recupera el último pedido, su estado y su valor.'}));}
+ReactDOM.createRoot(document.getElementById('r')).render(h(Demo));
+</script></body></html>

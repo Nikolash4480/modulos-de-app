@@ -1,0 +1,32 @@
+<!-- @dsCard group="Composiciones" height=1708 width=960 page=true subtitle="Tres pantallas armadas solo con las piezas" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box;width:960px}.s{display:flex;flex-direction:column;gap:32px}.lab{font:500 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px}.stage{border:1px solid var(--line);border-radius:12px;overflow:hidden}</style>
+</head><body><div id="r"></div>
+<script>
+var h=React.createElement,K=window.AppKit;
+function L(t,c,st){return h('div',null,h('p',{className:'lab'},t),h('div',{className:'stage',style:st},c));}
+function Demo(){return h('div',{className:'s'},
+
+ L('Editor de agentes',
+  h('div',{style:{display:'grid',gridTemplateColumns:'88px 1fr 220px',height:520,background:'var(--bg)'}},
+   h(K.SideNav,{style:{height:'100%',borderRadius:0},items:[{icon:'home',label:'Inicio'},{icon:'agent',label:'Agentes',active:true},{icon:'template',label:'Plantillas'},{icon:'runs',label:'Ejecuciones'}],footer:[{icon:'settings',label:'Ajustes'}],user:'JR'}),
+   h('div',{style:{display:'flex',flexDirection:'column',minWidth:0}},
+    h('div',{style:{padding:16}},h(K.PageHeader,{crumbs:['Agentes','Borrador v1.5'],title:'Asistente de reembolsos',status:{label:'Cambios sin publicar'}})),
+    h(K.DotField,{style:{flex:1,minHeight:0}},h(K.FlowCanvas,null,h(K.FlowStart,null,'Inicio'),h(K.FlowConnector,{height:24}),h(K.FlowNode,{icon:'sort',iconTone:'green',title:'Clasificar intención',subtitle:'Nodo de IA',badge:'96%',selected:true,width:200})))),
+   h('div',{style:{padding:12,display:'grid',gap:8,alignContent:'start',borderLeft:'1px solid var(--line)',background:'var(--surface)'}},
+    h(K.SearchField,{placeholder:'Buscar un nodo'}),h(K.SectionHeader,{title:'Disparadores',count:2,open:true}),
+    h(K.ListItem,{icon:'chat',title:'Mensaje',subtitle:'Un cliente escribe',starred:true}),h(K.ListItem,{icon:'link',title:'Webhook',subtitle:'Llamada externa',starred:false})))),
+ L('Panel móvil oscuro',
+  h('div',{'data-theme':'dark',style:{background:'var(--bg)',padding:24,display:'flex',gap:24,justifyContent:'center'}},
+   h(K.PhoneFrame,{width:300,tabs:[{icon:'pie',label:'Ventas',active:true},{icon:'user',label:'Clientes'},{icon:'settings',label:'Ajustes'}]},
+    h(K.StatCard,{title:'Ventas',action:'Detalles',value:'58%',delta:'+2,1%',deltaLabel:'vs semana pasada'},h(K.TickBar,{value:58})),
+    h(K.Card,{title:'Canales',icon:'pie'},h('div',{style:{display:'flex',gap:16,alignItems:'center'}},h(K.Donut,{size:84,thickness:12,segments:[{value:40,tone:'accent'},{value:38,tone:'amber'},{value:12,tone:'teal'}]}),h(K.Legend,{layout:'column',items:[{label:'Orgánica',tone:'accent',pct:'40%'},{label:'Redes',tone:'amber',pct:'38%'}]})))),
+   h('div',{style:{paddingLeft:130}},h(K.IconDock,{items:[{icon:'pie',active:true,tooltip:'Rendimiento'},{icon:'user'},{icon:'settings'}]})))),
+ L('Comentarios y archivos',
+  h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,padding:24,background:'var(--bg)'}},
+   h('div',{style:{display:'grid',gap:10,alignContent:'start'}},h(K.PanelTitle,{icon:'chat'},'Comentarios'),h(K.CommentThread,null,h(K.CommentItem,{name:'Marta Benítez',time:'hace 3 horas'},'Hay que pulir esto cuanto antes.'),h(K.CommentItem,{name:'Jorge W.',time:'hace 35 min'},'Ya está, junto con la ortografía.')),h(K.Composer,null)),
+   h(K.FilePreview,{type:'PDF',name:'Contrato.pdf',meta:'2,5 GB',description:'Versión final para firma.',people:[{name:'Jorge W.'},{name:'Alejandro M.',you:true}],actions:[{icon:'share',label:'Compartir'},{icon:'edit',label:'Editar'},{icon:'trash',label:'Eliminar'}]}))));}
+ReactDOM.createRoot(document.getElementById('r')).render(h(Demo));
+</script></body></html>

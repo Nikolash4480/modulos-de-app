@@ -1,0 +1,11 @@
+<!-- @dsCard group="Átomos" height=74 subtitle="Etiqueta mínima: NEW, porcentaje, neutra, negra, contorno" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}</style>
+</head><body><div id="r"></div>
+<script>
+var h=React.createElement,K=window.AppKit;
+function Demo(){return h('div',{style:{display:'flex',gap:12,alignItems:'center'}},h(K.Badge,{tone:'new'},'New'),h(K.Badge,{tone:'green'},'96%'),h(K.Badge,null,'4'),h(K.Badge,{tone:'dark'},'Beta'),h(K.Badge,{tone:'outline'},'v1.5'));}
+ReactDOM.createRoot(document.getElementById('r')).render(h(Demo));
+</script></body></html>

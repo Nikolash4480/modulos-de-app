@@ -1,0 +1,11 @@
+<!-- @dsCard group="Datos" height=272 subtitle="Círculo amarillo con icono sobre una línea vertical" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}</style>
+</head><body><div id="r"></div>
+<script>
+var h=React.createElement,K=window.AppKit;
+function Demo(){var ev=[['Consulta de ingreso','visits','highlight'],['Aspirina x2','pill','highlight'],['Alta médica','check','dark']];return h('div',null,ev.map(function(e,k){return h('div',{key:k,style:{display:'flex',alignItems:'center',gap:14}},h(K.TimelineMarker,{icon:e[1],tone:e[2],height:72,lineTop:k>0,lineBottom:k<ev.length-1}),h('span',{style:{fontSize:14}},e[0]));}));}
+ReactDOM.createRoot(document.getElementById('r')).render(h(Demo));
+</script></body></html>

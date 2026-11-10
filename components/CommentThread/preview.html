@@ -1,0 +1,11 @@
+<!-- @dsCard group="Conversación" height=409 subtitle="Comentario con respuestas unidas por una línea continua" -->
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>html,body{margin:0}body{background:var(--bg);color:var(--ink);font-family:var(--font-sans);padding:24px;box-sizing:border-box}</style>
+</head><body><div id="r"></div>
+<script>
+var h=React.createElement,K=window.AppKit;
+function Demo(){return h('div',{style:{maxWidth:360}},h(K.CommentThread,null,h(K.CommentItem,{name:'Marta Benítez',time:'hace 3 horas'},'Hay que pulir esto cuanto antes: varias cosas por reescribir y revisar.'),h(K.CommentItem,{name:'Jorge Williamson',time:'hace 35 min'},'Mira este capítulo, creo que hay que reescribirlo.'),h(K.CommentItem,{name:'Alejandro M.',time:'hace 32 min'},'Ya está, junto con la ortografía.'),h(K.CommentItem,{name:'Marta Benítez',time:'hace 10 min'},'Perfecto, lo cierro.')));}
+ReactDOM.createRoot(document.getElementById('r')).render(h(Demo));
+</script></body></html>
